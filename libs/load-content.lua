@@ -7,11 +7,11 @@ return function (section, name)
   local path = (name or "index") .. ".md"
   content, err = fs.readFile(path)
   if not content then
-    if err and not err:match("^ENOENT:") then error(err) end
+    --if err and not err:match("^ENOENT:") then error(err) end
     path = (name or "index") .. ".html"
     content, err = fs.readFile(path)
     if not content then
-      if err and not err:match("^ENOENT:") then error(err) end
+      --if err and not err:match("^ENOENT:") then error(err) end
       return
     end
   end
