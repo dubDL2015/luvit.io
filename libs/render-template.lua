@@ -1,6 +1,6 @@
 local pathJoin = require('luvi').path.join
 local templateDir = pathJoin(module.dir, "../templates")
-local fs = require('coro-fs').chroot(templateDir)
+local fs = require('hybrid-fs')(templateDir)
 local uv = require('uv')
 local renderMarkdown = require('markdown')
 local digest = require('openssl').digest.digest

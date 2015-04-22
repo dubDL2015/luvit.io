@@ -1,6 +1,6 @@
 local renderTemplate = require('render-template')
 local pathJoin = require('luvi').path.join
-local fs = require('coro-fs').chroot(pathJoin(module.dir, "../.."))
+local fs = require('hybrid-fs')(pathJoin(module.dir, "../.."))
 local loadContent = require('load-content')
 
 local function loadArticles()
