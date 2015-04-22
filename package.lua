@@ -3,6 +3,9 @@ return {
   version = "0.0.1",
   private = true,
   dependencies = {
+    "luvit/require",
+    "luvit/pretty-print",
+    "luvit/json",
     -- hoedown ffi bindings for fast markdown compiling
     "creationix/hoedown@1.0.1",
     -- Web server framework

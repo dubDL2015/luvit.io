@@ -3,6 +3,10 @@ local static = require('weblit-static')
 local blog = require('controllers/blog')
 local env = require('env')
 
+if type(module) == "function" then
+  module = { dir = "bundle:" }
+end
+
 require('weblit-app')
 
   .bind({host = "0.0.0.0", port = env.get("PORT") or 8080})
@@ -25,3 +29,5 @@ require('weblit-app')
   .use(static(pathJoin(module.dir, "static")))
 
   .start()
+
+  require('uv').run()
